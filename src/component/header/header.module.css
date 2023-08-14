@@ -1,0 +1,45 @@
+.navBar {
+  display: flex;
+  align-items: center;
+  height: 12%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.navBarScroll {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.navBar nav {
+  flex: 1;
+  text-align: right;
+}
+
+.navBar nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 60px;
+}
+
+.navBar nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12;
+}
+
+.logo {
+  width: 50px;
+  cursor: pointer;
+}
+
+.menu {
+  width: 30px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+
+.active {
+  color: #0a95ff !important;
+}
