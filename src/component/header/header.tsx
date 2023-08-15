@@ -1,5 +1,5 @@
 "use client";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import style from "./header.module.css";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +8,12 @@ import { usePathname } from "next/navigation";
 const Header = () => {
   const pathname = usePathname();
   const [fixed, setFixed] = useState<boolean>(false);
+  const navRef = useRef<HTMLDivElement | null>(null);
+  
+  const showNavBar = ():void=>{
+    navRef?.current?.classList?.toggle(style.activeNav)
+  }
+
   const onScroll = useCallback((event: Event) => {
     const { pageYOffset, scrollY } = window;
 
@@ -19,9 +25,7 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    //add eventlistener to window
     window.addEventListener("scroll", onScroll, { passive: true });
-    // remove event on unmount to prevent a memory leak with the cleanup
     return () => {
       window.removeEventListener("scroll", onScroll);
     };
@@ -36,7 +40,7 @@ const Header = () => {
         height={500}
         alt="Picture of the author"
       />
-      <nav className={style.nav}>
+      <nav ref={navRef}>
         <ul>
           <li>
             {" "}
@@ -68,6 +72,7 @@ const Header = () => {
         </ul>
       </nav>
       <Image
+      onClick={showNavBar}
         className={style.menu}
         src="/menu.png"
         width={500}
