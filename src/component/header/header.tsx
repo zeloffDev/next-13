@@ -9,10 +9,10 @@ const Header = () => {
   const pathname = usePathname();
   const [fixed, setFixed] = useState<boolean>(false);
   const navRef = useRef<HTMLDivElement | null>(null);
-  
-  const showNavBar = ():void=>{
-    navRef?.current?.classList?.toggle(style.activeNav)
-  }
+
+  const showNavBar = (): void => {
+    navRef?.current?.classList?.toggle(style.activeNav);
+  };
 
   const onScroll = useCallback((event: Event) => {
     const { pageYOffset, scrollY } = window;
@@ -44,11 +44,8 @@ const Header = () => {
         <ul>
           <li>
             {" "}
-            <Link
-              className={pathname === "/" ? style.active : ""}
-              href="/"
-            >
-              home
+            <Link className={pathname === "/" ? style.active : ""} href="/">
+              HOME
             </Link>
           </li>
           <li>
@@ -57,22 +54,22 @@ const Header = () => {
               className={pathname === "/region" ? style.active : ""}
               href="/region"
             >
-              region
+              REGION
             </Link>
           </li>
           <li>
             {" "}
             <Link
-              className={pathname === "/Linkbout" ? style.active : ""}
-              href="/Linkbout"
+              className={pathname === "/blog" ? style.active : ""}
+              href="/blog"
             >
-              Linkbout
+              BLOG
             </Link>
           </li>
         </ul>
       </nav>
       <Image
-      onClick={showNavBar}
+        onClick={showNavBar}
         className={style.menu}
         src="/menu.png"
         width={500}

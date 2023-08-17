@@ -1,0 +1,78 @@
+.row {
+  display: flex;
+  height: 88vh;
+  align-items: center;
+}
+
+.col {
+  flex-basis: 50%;
+}
+
+.col h1 {
+  font-size: 100px;
+  color: #fff;
+}
+.col p {
+  font-size: 11px;
+  color: #fff;
+}
+
+.button {
+  width: 180px;
+  color: #000;
+  padding: 12px 0;
+  background: #fff;
+  font-size: 12px;
+  border: 0;
+  border-radius: 20px;
+  outline: none;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.button:hover {
+  transform: scale(105%);
+}
+
+.card {
+  width: 200px;
+  height: 230px;
+  background: #fff;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 15px 25px;
+  margin: 10px 15px;
+  background-image: url("/pic-1.png");
+  background-position: center;
+  background-size: cover;
+  transition: 1s;
+}
+
+.card:hover {
+  transform: translateY(-14px);
+}
+
+.card h5 {
+  color: #fff;
+  text-shadow: 0 0 5px #999;
+}
+
+.card p {
+  color: #fff;
+  text-shadow: 0 0 15px #999;
+  font-size: 8px;
+}
+
+.card1 {
+  background-image: url("/pic-1.png");
+}
+.card2 {
+  background-image: url("/pic-2.png");
+}
+.card3 {
+  background-image: url("/pic-3.png");
+}
+.card4 {
+  background-image: url("/pic-4.png");
+}
